@@ -1,0 +1,10 @@
+package com.hms.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.hms.models.Supplier;
+
+@Repository
+public interface SupplierRepository extends JpaRepository<Supplier, Long> {
+    Supplier findByNameAndContactInfo(String name, String contactInfo);
+}
